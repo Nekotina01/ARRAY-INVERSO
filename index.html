@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Inverso</title>
+</head>
+<body>
+    <h1>Array de 1 a 10</h1>
+    <div id="array-container"></div>
+    <button id="botao-inverter">Inverter Array</button>
+    <script>
+        // Array de 1 a 10
+        let arrayDe1a10 = [];
+        for (let i = 1; i <= 10; i++) {
+            arrayDe1a10.push(i);
+        }
+
+        // Função para inverter o array
+        function inverterArray() {
+            let arrayDe10a1 = arrayDe1a10.slice().reverse();
+            mostrarArray(arrayDe10a1);
+        }
+
+        // Função para mostrar o array na página HTML
+        function mostrarArray(array) {
+            const container = document.getElementById("array-container");
+            container.innerHTML = "";
+            array.forEach(numero => {
+                const item = document.createElement("div");
+                item.textContent = numero;
+                container.appendChild(item);
+            });
+        }
+
+        // Mostrar o array de 1 a 10 inicialmente
+        mostrarArray(arrayDe1a10);
+
+        // Adicionar evento de clique ao botão
+        document.getElementById("botao-inverter").addEventListener("click", inverterArray);
+    </script>
+</body>
+</html>
